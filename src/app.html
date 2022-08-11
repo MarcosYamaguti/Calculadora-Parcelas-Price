@@ -1,0 +1,44 @@
+<template>
+	<div class="slds-card">
+		<h1 id="Titulo"> Calculadora- Price</h1>
+
+		<div>
+			<lightning-input type="Number" label="Valor Financiado: " onchange={mudouN1}></lightning-input>
+			<lightning-input type="Number" label="Valor da Entrada: " onchange={mudouN2}></lightning-input>
+			<lightning-input type="percent" label="Valor do Juros: " onchange={mudouN3}></lightning-input>
+		</div>
+		<br>
+		<div>
+			<p>Customizar</p>
+			<lightning-input type="Number" label="Quantos Meses: " onchange={mudouN4}></lightning-input>
+		</div>
+		<br>
+
+		<div>
+			<lightning-button variant="brand" label="1 Ano" onclick={UM} class="slds-m-left_x-small"></lightning-button>
+			<lightning-button variant="brand" label="5 Anos" onclick={CINCO} class="slds-m-left_x-small">
+			</lightning-button>
+			<lightning-button variant="brand" label="10 Anos" onclick={DEZ} class="slds-m-left_x-small">
+			</lightning-button>
+			<lightning-button variant="brand" label="20 Anos" onclick={VINTE} class="slds-m-left_x-small"></lightning-button>
+			<lightning-button variant="brand" label="30 Anos" onclick={TRINTA} class="slds-m-left_x-small"></lightning-button>
+			<lightning-button variant="brand" label="Customizado" onclick={CUSTOMIZADO} class="slds-m-left_x-small">
+			</lightning-button>
+			<lightning-button variant="Destructive" label="C" onclick={LIMPA} class="slds-m-left_x-small"></lightning-button>
+		</div>
+
+		<br></br>
+
+		<div>
+			<p><b> Valor da Parcela: </b></p>
+			<lightning-formatted-number value={resultado} format-style="currency" currency-code="BRL">
+			</lightning-formatted-number>
+
+			<p> Valor do Juros: </p>
+			<lightning-formatted-number value={juros} format-style="percent">
+			</lightning-formatted-number>
+
+		</div>
+
+	</div>
+</template>
